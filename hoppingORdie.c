@@ -21,7 +21,8 @@ int randbox() {
 int main(void)    
 {
 
-  int i, drop, gem, win, try;
+  int i, drop, win, try;
+  //int gem; //宝石残量調べる時のやつ(コメントアウトしたやつ外せば動きます)
   double ans, c, gemsans;
   int savegems = 0;
   double d = 0;
@@ -34,7 +35,7 @@ int main(void)
 	
     while(1) {
       
-      gem = 240;
+      //gem = 240;
       win = 0;  
       try++;
     
@@ -42,7 +43,7 @@ int main(void)
 	
       while(1) {
 	
-	gem -= 30;
+	//gem -= 30;
 	//printf("gemの数: %d\n", gem);
 	
 	drop = randbox();
@@ -59,7 +60,7 @@ int main(void)
       if(win == 1) {
 	c = 1.0 / try;
 	d += c;
-	savegems += gem;
+	//savegems += gem;
 	break;
       }
 
@@ -70,8 +71,8 @@ int main(void)
   ans = d / (double)N;
   
   printf("手持ち240gemでホッピング獲得にチャレンジするとき\n爆死しない割合: %lf \n", ans);
-  gemsans = savegems / N;
-  printf("爆死しなかったときに残ったgemの数の平均: %lf \n", gemsans);
+  //gemsans = savegems / N;
+  //printf("爆死しなかったときに残ったgemの数の平均: %lf \n", gemsans);
 
 }
     
